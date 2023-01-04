@@ -34,14 +34,13 @@ def main():
     if profile_id is None:
         print(f"{Fore.RED}{account_name} does not exsist.")
         
-        exit(0)
+        clear_main()
     
     # If 'profile_id' is False, it means the search request must've failed.
     
     if not profile_id:
         print(f"{Fore.RED}No profile id found")
-        
-        exit(0)
+        clear_main()
     
     # Build the site URL
     
@@ -60,7 +59,7 @@ def main():
             status code [{Fore.LIGHTYELLOW_EX}{status_code}{Fore.RED}]. \
             Perhaps there are capital/lower letters")
         
-        exit(0)
+        clear_main()
       
     # Parse the profile into html
     
@@ -174,18 +173,18 @@ def validate_input(name: str) -> None:
     if len(name) <= 0:
         print(f"{Fore.RED}The name entered was too short!")
         
-        exit(0)
+        main()
         
     elif len(name) > 16:
         print(f"{Fore.RED}The name entered was too long!")        
-        exit(0)
+        main()
     
     # Check every character in the 'name' variable if its an alphanumeric character excluding '_'
         
     elif any(not char.isalnum() for char in name if char != "_"):
         print(f"{Fore.RED}Special characters are probhibited!")
         
-        exit(0)
+        main()
 
 def execute_assign_user_profile_methods(name_mc_profile_method: NameMCProfile.__call__, variable_name: str) -> None:
     """Executes profile methods and assigns the variables related to the method, this is used for concurrency
@@ -256,6 +255,10 @@ def clear(os: str) -> None:
         
         run('clear')
 
+def clear_main() -> None:
+    clear()
+    main()
+        
 def print_namemc_profile(favourite_servers: List[str],
                          profile_name: str,
                          profile_followers: int,
