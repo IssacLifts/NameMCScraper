@@ -303,6 +303,6 @@ if __name__ == "__main__":
     init(autoreset=True)
     
     NAMEMC_HEADERS: dict = {"cookie": Config.COOKIE,
-               "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36 OPR/93.0.0.0"}
+               "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0"}
     
     main()
